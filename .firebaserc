@@ -1,5 +1,19 @@
 {
   "projects": {
     "default": "workshop0406-36c8b"
-  }
+  },
+  "targets": {
+    "workshop0406-36c8b": {
+      "hosting": {
+        "dev": [
+          "dev-workshop0406"
+        ],
+        "prod": [
+          "workshop0406-36c8b"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

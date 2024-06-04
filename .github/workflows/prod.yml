@@ -1,15 +1,15 @@
-name: Deploy to Dev
+name: Deploy to Prod
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   build_and_deploy:
     environment:
       name: firebase
-      url: https://dev-workshop0406.web.app
+      url: https://workshop0406-36c8b.web.app
     runs-on: ubuntu-latest
     
     steps:
@@ -29,7 +29,7 @@ jobs:
 
       - name: Deploy to Firebase
         run: npm i -g firebase-tools@latest
-      - run: firebase deploy --only hosting:dev --token "$FIREBASE_TOKEN"
+      - run: firebase deploy --only hosting:prod --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN}}  
     
